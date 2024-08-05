@@ -2,7 +2,7 @@ version: 0.0
 os: linux
 
 files:
-  - source: /script
+  - source: /script/*
     destination: /home/ubuntu/node/angellist-node.js-app/
     overwrite: true
 file_exists_behavior: OVERWRITE
