@@ -5,15 +5,14 @@ phases:
     commands:
       - echo Logging in to Docker Hub...
       - echo $DOCKER_PASSWORD | docker login --username $DOCKER_USERNAME --password-stdin
-      - export TIMESTAMP=$(date +%Y%m%d%H%M%S) # Create a timestamp
   build:
     commands:
       - echo Build started on `date`
       - echo Building the Docker image...
-      - docker build -t node.js-angellist-app:$TIMESTAMP .
-      - docker tag node.js-angellist-app:$TIMESTAMP $DOCKER_USERNAME/node.js-app-anglelist:$TIMESTAMP
+      - docker build -t node.js-angellist-app:latest .
+      - docker tag node.js-angellist-app:latest $DOCKER_USERNAME/node.js-app-anglelist:latest
   post_build:
     commands:
       - echo Pushing the Docker image to Docker Hub...
-      - docker push $DOCKER_USERNAME/node.js-app-anglelist:$TIMESTAMP
+      - docker push $DOCKER_USERNAME/node.js-app-anglelist:latest
       - echo Build completed on `date`
