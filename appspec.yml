@@ -2,7 +2,12 @@ version: 0.0
 os: linux
 
 files:
-  - source: /
+  - source: /script
+    destination: /home/ubuntu/node/angellist-node.js-app/
+    overwrite: true
+file_exists_behavior: OVERWRITE
+files:
+  - source: /docker-compose.yml
     destination: /home/ubuntu/node/angellist-node.js-app/
     overwrite: true
 file_exists_behavior: OVERWRITE
