@@ -1,0 +1,23 @@
+version: 0.0
+os: linux
+
+
+permissions:
+  - object: /home/ubuntu/node/angellist-node.js-app/scripts/app_start.sh
+    pattern: "**"
+    owner: ubuntu
+    group: ubuntu
+    mode: 777
+    type : 
+      - file
+
+hooks:
+
+  BeforeInstall:
+
+  AfterInstall:
+
+  ApplicationStart:
+    - location: scripts/app_start.sh
+      timeout: 120
+      runas: ubuntu
