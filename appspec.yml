@@ -1,7 +1,11 @@
 version: 0.0
 os: linux
 
-
+files:
+  - source: /
+    destination: /home/ubuntu/node/angellist-node.js-app/
+    overwrite: true
+file_exists_behavior: OVERWRITE
 permissions:
   - object: /home/ubuntu/node/angellist-node.js-app/scripts/app_start.sh
     pattern: "**"
