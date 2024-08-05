@@ -8,7 +8,7 @@ files:
     file_exists_behavior: OVERWRITE
 
   - source: scripts/app_start.sh
-    destination: /home/ubuntu/node/angellist-node.js-app/scripts/
+    destination: /home/ubuntu/node/angellist-node.js-app/scripts/app_start.sh
     overwrite: true
     file_exists_behavior: OVERWRITE
 
