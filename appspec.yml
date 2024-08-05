@@ -2,26 +2,33 @@ version: 0.0
 os: linux
 
 files:
-  - source: /
-    destination: /home/ubuntu/node/angellist-node.js-app/
+  - source: docker-compose.yml
+    destination: /home/ubuntu/node/angellist-node.js-app/docker-compose.yml
     overwrite: true
-file_exists_behavior: OVERWRITE
+    file_exists_behavior: OVERWRITE
+
+  - source: scripts/app_start.sh
+    destination: /home/ubuntu/node/angellist-node.js-app/scripts/app_start.sh
+    overwrite: true
+    file_exists_behavior: OVERWRITE
+
 permissions:
   - object: /home/ubuntu/node/angellist-node.js-app/scripts/app_start.sh
     pattern: "**"
     owner: ubuntu
     group: ubuntu
     mode: 777
-    type : 
+    type:
       - file
 
 hooks:
-
   BeforeInstall:
-
+    # Commands to run before installing files (optional)
+  
   AfterInstall:
+    # Commands to run after files are installed (optional)
 
   ApplicationStart:
-    - location: scripts/app_start.sh
+    - location: /home/ubuntu/node/angellist-node.js-app/scripts/app_start.sh
       timeout: 120
       runas: ubuntu
