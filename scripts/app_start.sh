@@ -5,7 +5,7 @@
 #!/bin/bash
 
 # Navigate to the application directory
-cd /home/ubuntu/node/angellist-node.js-app/
+cd /home/ubuntu/node/angellist-node.js-app/docker-compose.yml
 
 # Pull the latest Docker images
 sudo docker-compose pull
